@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package notification;
+
+
+message Notification {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+
+}
+
+message GetNotificationRequest {
+  string notification_id = 1;
+}
+
+message GetNotificationResponse {
+  Notification notif = 1;
+}
+
+
+
+
+
+service NotificationService {
+  rpc GetNotification(GetNotificationRequest) returns (GetNotificationResponse);
+
+}
